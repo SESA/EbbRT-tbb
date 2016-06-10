@@ -114,7 +114,7 @@ namespace interface5 {
         //! Node base type
         typedef hash_map_node_base node_base;
         //! Bucket type
-#if __ebbrt
+#if __ebbrt__
         struct bucket : ebbrt::CacheAligned, tbb::internal::no_copy {
 #else
         struct bucket : tbb::internal::no_copy {
@@ -216,7 +216,7 @@ namespace interface5 {
         void enable_segment( segment_index_t k, bool is_initial = false ) {
             __TBB_ASSERT( k, "Zero segment must be embedded" );
             enable_segment_failsafe watchdog( my_table, k );
-#if __ebbrt
+#if __ebbrt__
             std::allocator<bucket> alloc;
 #else
             cache_aligned_allocator<bucket> alloc;

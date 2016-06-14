@@ -12,10 +12,10 @@ project(Tbb CXX)
 
 # Initialize CXXFLAGS.
 set(CMAKE_CXX_FLAGS                "-Wall -Werror -std=gnu++14 -iquote ${CMAKE_SOURCE_DIR}/include")
-set(CMAKE_CXX_FLAGS_DEBUG          "-O0 -g")
+set(CMAKE_CXX_FLAGS_DEBUG          "-O0 -g3")
 set(CMAKE_CXX_FLAGS_MINSIZEREL     "-Os -DNDEBUG")
 set(CMAKE_CXX_FLAGS_RELEASE        "-O4 -flto -DNDEBUG")
-set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -g")
+set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -g3")
 
 add_library(tbb STATIC
   ${CMAKE_SOURCE_DIR}/spin_rw_mutex.cpp
